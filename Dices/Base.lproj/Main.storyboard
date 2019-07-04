@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,68 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Dices" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="casino-background" translatesAutoresizingMaskIntoConstraints="NO" id="4Po-tO-vfX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QNx-5R-a9X">
+                                <rect key="frame" x="86" y="395" width="242" height="106"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice1" translatesAutoresizingMaskIntoConstraints="NO" id="rbj-Sf-Jpo">
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="106" id="cwd-QW-TjX"/>
+                                            <constraint firstAttribute="width" constant="106" id="e6j-kS-866"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dice2" translatesAutoresizingMaskIntoConstraints="NO" id="kxT-oL-M23">
+                                        <rect key="frame" x="136" y="0.0" width="106" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="106" id="MWJ-bO-3Z6"/>
+                                            <constraint firstAttribute="height" constant="106" id="Ucz-N6-F4V"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="242" id="NWy-Ib-p01"/>
+                                    <constraint firstAttribute="height" constant="106" id="dHF-k2-vSU"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DA2-Qj-8nF">
+                                <rect key="frame" x="0.0" y="632" width="414" height="69"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="41"/>
+                                <state key="normal" title="Roll dices">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DA2-Qj-8nF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1QE-Se-hBS"/>
+                            <constraint firstItem="4Po-tO-vfX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GVy-KN-iJ9"/>
+                            <constraint firstItem="4Po-tO-vfX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gok-5B-0zn"/>
+                            <constraint firstItem="4Po-tO-vfX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HMr-Xy-nSF"/>
+                            <constraint firstItem="4Po-tO-vfX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bmJ-IE-02x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DA2-Qj-8nF" secondAttribute="trailing" id="dzj-bI-7Pz"/>
+                            <constraint firstItem="QNx-5R-a9X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qOQ-dF-urN"/>
+                            <constraint firstItem="QNx-5R-a9X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u1j-6m-zjL"/>
+                            <constraint firstItem="DA2-Qj-8nF" firstAttribute="top" secondItem="QNx-5R-a9X" secondAttribute="bottom" constant="131" id="whG-tj-xeH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="112.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="casino-background" width="1200" height="800"/>
+        <image name="dice1" width="35.5" height="35.5"/>
+        <image name="dice2" width="35.5" height="35.5"/>
+    </resources>
 </document>
