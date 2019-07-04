@@ -33,6 +33,16 @@ class ViewController: UIViewController {
         self.generateRandomNumber()
     }
     
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            self.generateRandomNumber()
+        }
+    }
+    
     private func generateRandomNumber() {
         randomDiceIndexLeft = Int(arc4random_uniform(self.nFaces))
         randomDiceIndexRight = Int(arc4random_uniform(self.nFaces))
@@ -46,8 +56,11 @@ class ViewController: UIViewController {
                         
         }) { (completed) in
             self.ImageViewDiceLeft.transform = CGAffineTransform.identity
+            self.ImageViewDiceLeft.alpha = 1.0
+            
             self.ImageViewDiceRight.transform = CGAffineTransform.identity
-
+            self.ImageViewDiceRight.alpha = 1.0
+            
             self.ImageViewDiceLeft.image = UIImage(named: self.diceImages[self.randomDiceIndexLeft])
             self.ImageViewDiceRight.image = UIImage(named: self.diceImages[self.randomDiceIndexRight])
         }
@@ -57,6 +70,8 @@ class ViewController: UIViewController {
         dice.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
             .concatenating(CGAffineTransform(rotationAngle: rotationAngle))
             .concatenating(CGAffineTransform(translationX: 0, y: 100))
+        
+        dice.alpha = 0.0
     }
 }
 
