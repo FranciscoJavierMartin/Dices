@@ -54,15 +54,26 @@
                                     <action selector="rollButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oce-hf-uKa"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-casino" translatesAutoresizingMaskIntoConstraints="NO" id="Qq0-GU-FWZ">
+                                <rect key="frame" x="100" y="182" width="214" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="DTj-07-Zsc"/>
+                                    <constraint firstAttribute="width" secondItem="Qq0-GU-FWZ" secondAttribute="height" multiplier="214:57" id="kz5-hl-c7g"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="DA2-Qj-8nF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1QE-Se-hBS"/>
+                            <constraint firstItem="Qq0-GU-FWZ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="138" id="54K-xN-bJz"/>
                             <constraint firstItem="4Po-tO-vfX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="GVy-KN-iJ9"/>
                             <constraint firstItem="4Po-tO-vfX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Gok-5B-0zn"/>
                             <constraint firstItem="4Po-tO-vfX" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="HMr-Xy-nSF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Qq0-GU-FWZ" secondAttribute="trailing" constant="100" id="K28-mb-Ccs"/>
+                            <constraint firstItem="Qq0-GU-FWZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="UlP-bL-2rc"/>
                             <constraint firstItem="4Po-tO-vfX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bmJ-IE-02x"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DA2-Qj-8nF" secondAttribute="trailing" id="dzj-bI-7Pz"/>
+                            <constraint firstItem="Qq0-GU-FWZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pkw-zG-Dau"/>
                             <constraint firstItem="QNx-5R-a9X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qOQ-dF-urN"/>
                             <constraint firstItem="QNx-5R-a9X" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u1j-6m-zjL"/>
                             <constraint firstItem="DA2-Qj-8nF" firstAttribute="top" secondItem="QNx-5R-a9X" secondAttribute="bottom" constant="131" id="whG-tj-xeH"/>
@@ -83,5 +94,6 @@
         <image name="casino-background" width="1200" height="800"/>
         <image name="dice1" width="35.5" height="35.5"/>
         <image name="dice2" width="35.5" height="35.5"/>
+        <image name="logo-casino" width="90" height="57"/>
     </resources>
 </document>
