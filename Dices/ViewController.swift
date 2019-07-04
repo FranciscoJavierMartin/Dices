@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var ImageViewDiceLeft: UIImageView!
     @IBOutlet weak var ImageViewDiceRight: UIImageView!
+    @IBOutlet weak var score: UILabel!
     
     var randomDiceIndexLeft: Int = 0
     var randomDiceIndexRight: Int = 0
@@ -51,8 +52,10 @@ class ViewController: UIViewController {
                        options: UIView.AnimationOptions.curveEaseIn,
                        animations: {
                         
-                        self.applyTransformsToDice(dice: self.ImageViewDiceRight, rotationAngle: -CGFloat.pi/2)
-                        self.applyTransformsToDice(dice: self.ImageViewDiceLeft, rotationAngle: CGFloat.pi/2)
+                        self.applyTransformsToDice(dice: self.ImageViewDiceRight,
+                                                   rotationAngle: -CGFloat.pi/2)
+                        self.applyTransformsToDice(dice: self.ImageViewDiceLeft,
+                                                   rotationAngle: CGFloat.pi/2)
                         
         }) { (completed) in
             self.ImageViewDiceLeft.transform = CGAffineTransform.identity
@@ -61,9 +64,16 @@ class ViewController: UIViewController {
             self.ImageViewDiceRight.transform = CGAffineTransform.identity
             self.ImageViewDiceRight.alpha = 1.0
             
-            self.ImageViewDiceLeft.image = UIImage(named: self.diceImages[self.randomDiceIndexLeft])
-            self.ImageViewDiceRight.image = UIImage(named: self.diceImages[self.randomDiceIndexRight])
+            self.ImageViewDiceLeft.image = UIImage(named:
+                self.diceImages[self.randomDiceIndexLeft])
+            self.ImageViewDiceRight.image = UIImage(named:
+                self.diceImages[self.randomDiceIndexRight])
+            
+            let nextScore = self.randomDiceIndexRight +
+                self.randomDiceIndexLeft + 2
+            self.score.text = "Score: \(nextScore)"
         }
+        
     }
     
     private func applyTransformsToDice(dice: UIImageView, rotationAngle: CGFloat){
