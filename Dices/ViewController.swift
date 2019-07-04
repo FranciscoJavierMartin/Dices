@@ -36,8 +36,27 @@ class ViewController: UIViewController {
     private func generateRandomNumber() {
         randomDiceIndexLeft = Int(arc4random_uniform(self.nFaces))
         randomDiceIndexRight = Int(arc4random_uniform(self.nFaces))
-        ImageViewDiceLeft.image = UIImage(named: diceImages[randomDiceIndexLeft])
-        ImageViewDiceRight.image = UIImage(named: diceImages[randomDiceIndexRight])
+        
+        UIView.animate(withDuration: 0.5, delay: 0,
+                       options: UIView.AnimationOptions.curveEaseIn,
+                       animations: {
+                        
+                        self.applyTransformsToDice(dice: self.ImageViewDiceRight, rotationAngle: -CGFloat.pi/2)
+                        self.applyTransformsToDice(dice: self.ImageViewDiceLeft, rotationAngle: CGFloat.pi/2)
+                        
+        }) { (completed) in
+            self.ImageViewDiceLeft.transform = CGAffineTransform.identity
+            self.ImageViewDiceRight.transform = CGAffineTransform.identity
+
+            self.ImageViewDiceLeft.image = UIImage(named: self.diceImages[self.randomDiceIndexLeft])
+            self.ImageViewDiceRight.image = UIImage(named: self.diceImages[self.randomDiceIndexRight])
+        }
+    }
+    
+    private func applyTransformsToDice(dice: UIImageView, rotationAngle: CGFloat){
+        dice.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            .concatenating(CGAffineTransform(rotationAngle: rotationAngle))
+            .concatenating(CGAffineTransform(translationX: 0, y: 100))
     }
 }
 
